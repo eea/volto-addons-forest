@@ -3,7 +3,7 @@ import codeSVG from '@plone/volto/icons/code.svg';
 
 import HiddenWidget from './Widgets/Hidden';
 import CollectionYears from './Widgets/CollectionYears';
-import PickObject from './PickObject';
+// import PickObject from './PickObject';
 import ObjectListWidget from './Widgets/ObjectList';
 import AlignBlockWidget from './Widgets/Align';
 import AttachedImageWidget from './Widgets/AttachedImage';
@@ -14,6 +14,9 @@ import NewsEdit from './News/NewsEdit';
 import CollectionBlockView from './Collection/BlockView';
 import CollectionBlockEdit from './Collection/BlockEdit';
 import CollectionView from './Collection/View';
+
+import ImageCardsView from './ImageCards/ImageCardsView';
+import ImageCardsEdit from './ImageCards/ImageCardsEdit';
 
 import * as addonReducers from './reducers';
 
@@ -50,7 +53,7 @@ export default (config) => {
   config.widgets.id.blocks = HiddenWidget;
   config.widgets.id.blocks_layout = HiddenWidget;
 
-  config.widgets.widget.object_by_path = PickObject;
+  // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.objectlist = ObjectListWidget;
   config.widgets.widget.align = AlignBlockWidget;
   config.widgets.widget.attachedimage = AttachedImageWidget;
@@ -101,13 +104,13 @@ export default (config) => {
     },
   };
 
-  config.viewlets = [
-    {
-      path: '/controlpanel',
-      component: ControlPanelViewlet,
-    },
-    ...(config.viewlets || []),
-  ];
+  // config.viewlets = [
+  //   {
+  //     path: '/controlpanel',
+  //     component: ControlPanelViewlet,
+  //   },
+  //   ...(config.viewlets || []),
+  // ];
 
   return config;
 };
