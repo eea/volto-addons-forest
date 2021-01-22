@@ -4,8 +4,7 @@ import tableSVG from '@plone/volto/icons/table.svg';
 import { Button, Segment, Form, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { SidebarPortal } from '@plone/volto/components';
-import { TextWidget, Icon } from '@plone/volto/components';
+import { Icon } from '@plone/volto/components';
 
 class SelectListingType extends Component {
   render() {
