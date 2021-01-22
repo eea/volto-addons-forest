@@ -3,9 +3,10 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
 
-import { portlets } from '~/config';
+import { settings } from '~/config';
 
 export default function renderPortletManager(name, cols, { ...props }) {
+  const portlets = settings.portlets;
   let WrappedPortletManager =
     portlets.managers[name] || portlets.managers.default;
   return cols ? (

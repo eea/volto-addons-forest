@@ -46,7 +46,17 @@ export default (config) => {
     ...config.addonReducers,
     ...addonReducers,
   };
-
+  config.settings.portlets = {
+    managers: {
+      ...config.portlets?.managers,
+      default: PortletManagerRenderer,
+    },
+    renderers: {
+      'portlets.Navigation': NavigationPortlet,
+      'portlets.Classic': ClassicPortlet,
+      default: DefaultPortlet,
+    },
+  };
   config.views.contentTypesViews.Collection = CollectionView;
 
   config.widgets.id.collection_years = CollectionYears;
@@ -89,18 +99,6 @@ export default (config) => {
     security: {
       addPermission: [],
       view: [],
-    },
-  };
-
-  config.portlets = {
-    managers: {
-      ...config.portlets?.managers,
-      default: PortletManagerRenderer,
-    },
-    renderers: {
-      'portlets.Navigation': NavigationPortlet,
-      'portlets.Classic': ClassicPortlet,
-      default: DefaultPortlet,
     },
   };
 
