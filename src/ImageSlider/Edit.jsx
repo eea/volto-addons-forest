@@ -21,23 +21,13 @@ import { withRouter } from 'react-router-dom';
 import clearIcon from '@plone/volto/icons/clear.svg';
 import penIcon from '@plone/volto/icons/pen.svg';
 
-import Loadable from 'react-loadable';
+import loadable from '@loadable/component';
 
-const draftjs = Loadable({
-  loader: () => import('draft-js'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
+const draftjs = loadable(() => import('draft-js'));
 
 const { convertToRaw } = draftjs;
 
-const draftjsimporthtml = Loadable({
-  loader: () => import('draft-js-import-html'),
-  loading() {
-    return <div>Loading...</div>;
-  },
-});
+const draftjsimporthtml = loadable(() => import('draft-js-import-html'));
 
 const { stateFromHTML } = draftjsimporthtml;
 
@@ -171,8 +161,8 @@ class EditSlider extends Component {
 
   onDrop(acceptedFiles) {
     this.setState({ uploading: true });
-    acceptedFiles.forEach(file => {
-      readAsDataURL(file).then(data => {
+    acceptedFiles.forEach((file) => {
+      readAsDataURL(file).then((data) => {
         const fields = data.match(/^data:(.*);(.*),(.*)$/);
 
         this.props.createAttachment(
@@ -252,7 +242,8 @@ function getSliderImages(attachments, new_attachment) {
   if (!attachments) return [];
 
   const atch = attachments.attachments || [];
-  const slider = (atch && atch.find(el => el['@id'] === 'slider-images')) || [];
+  const slider =
+    (atch && atch.find((el) => el['@id'] === 'slider-images')) || [];
   let res = [...(slider.items || [])];
   if (new_attachment) res = [new_attachment, ...res];
   return res;
@@ -262,7 +253,7 @@ function getSliderImages(attachments, new_attachment) {
 function saveAttachment(path, data) {
   return (dispatch, getState) => {
     const basePath = getState().router.location.pathname;
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve(dispatch(updateAttachment(path, data)));
     }).then(() => {
       const url = `${getBaseUrl(basePath)}/@attachments`;
