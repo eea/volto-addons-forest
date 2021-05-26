@@ -2,7 +2,7 @@ import { CHANGE_MAP_DATA, GET_MAP_DATA } from '../constants';
 
 const initialState = [];
 
-const addMapDataToState = (state = initialState, action) => {
+export const addMapDataToState = (state = initialState, action) => {
   let existingIdIndex;
 
   //check for existing mapData on the same page element and edits it
@@ -11,6 +11,7 @@ const addMapDataToState = (state = initialState, action) => {
       existingIdIndex = index;
       return element;
     }
+    return undefined;
   });
 
   if (hasMapData.length !== 0) {

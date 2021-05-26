@@ -66,16 +66,7 @@ export const FlatObjectList = ({ id, value = [], schema, onChange }) => {
 };
 
 export const ModalObjectListForm = (props) => {
-  const {
-    open,
-    title,
-    className,
-    onSave,
-    onCancel,
-    schema,
-    id,
-    value = [],
-  } = props;
+  const { open, title, className, onSave, onCancel, id, value = [] } = props;
 
   const empty = {};
 

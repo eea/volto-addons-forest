@@ -1,5 +1,5 @@
 import React from 'react';
-// import componentQueries from 'react-component-queries';
+import componentQueries from 'react-component-queries';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 
