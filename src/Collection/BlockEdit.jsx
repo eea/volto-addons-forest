@@ -147,7 +147,7 @@ export default connect(
       contentSubrequests: state.content.subrequests,
       metadataFields:
         state.vocabularies[vocabulary] && state.vocabularies[vocabulary].items
-          ? state.vocabularies[vocabulary].items.map(o => [o.value, o.label])
+          ? state.vocabularies[vocabulary].items.map((o) => [o.value, o.label])
           : [],
     };
   },

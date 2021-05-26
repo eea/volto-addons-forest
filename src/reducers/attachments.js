@@ -29,7 +29,7 @@ export default function attachments(state = initialState, action = {}) {
       return {
         ...state,
         error: null,
-        attachments: action.result.items.map(item => ({
+        attachments: action.result.items.map((item) => ({
           ...item,
           url: item['@id'].replace(settings.apiPath, ''),
         })),

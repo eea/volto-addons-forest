@@ -9,13 +9,13 @@ const url = require('url');
 
 export function dataToQueryString(data) {
   let queryArray = [];
-  const arrayOptions = pickBy(data, item => isArray(item));
+  const arrayOptions = pickBy(data, (item) => isArray(item));
 
   queryArray = concat(
     queryArray,
     data
       ? join(
-          map(toPairs(pickBy(data, item => !isArray(item))), item => {
+          map(toPairs(pickBy(data, (item) => !isArray(item))), (item) => {
             if (item[0] === 'SearchableText') {
               // Adds the wildcard to the SearchableText param
               item[1] = `${item[1]}*`;
@@ -32,7 +32,10 @@ export function dataToQueryString(data) {
     arrayOptions
       ? join(
           map(pickBy(arrayOptions), (item, key) =>
-            join(item.map(value => `${key}:list=${value}`), '&'),
+            join(
+              item.map((value) => `${key}:list=${value}`),
+              '&',
+            ),
           ),
           '&',
         )

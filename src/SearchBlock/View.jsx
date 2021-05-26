@@ -168,7 +168,7 @@ class View extends Component {
       isObject(this.state.query.properties) &&
       Object.entries(this.state.query.properties).forEach(([itemKey, item]) => {
         if (isArray(item.value)) {
-          item.value.forEach(value => {
+          item.value.forEach((value) => {
             query += `&${itemKey}:query=${value}`;
           });
         } else if (item.value) {

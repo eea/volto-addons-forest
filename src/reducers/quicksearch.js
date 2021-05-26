@@ -52,7 +52,7 @@ export default function search(state = initialState, action = {}) {
             loaded: false,
           };
     case `${QUICK_SEARCH_CONTENT}_SUCCESS`:
-      const items = action.result.items.filter(item => {
+      const items = action.result.items.filter((item) => {
         item['@id'] = item['@id'].replace(settings.apiPath, '');
         let ok = true;
         action.filters &&

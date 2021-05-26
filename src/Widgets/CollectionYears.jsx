@@ -45,7 +45,7 @@ const messages = defineMessages({
 });
 
 const currentYear = new Date().getFullYear();
-const years = range(1929, currentYear).map(y => ({
+const years = range(1929, currentYear).map((y) => ({
   text: y,
   value: y,
 }));
@@ -231,7 +231,7 @@ class CollectionYears extends Component {
                   })
                 }
               />
-              {map(error, message => (
+              {map(error, (message) => (
                 <Label key={message} basic color="red" pointing>
                   {message}
                 </Label>

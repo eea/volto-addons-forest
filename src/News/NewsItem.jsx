@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const NewsItem = ({ item }) => {
-  const prettyDate = time => {
+  const prettyDate = (time) => {
     let date = new Date(time);
     const dtf = new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
@@ -15,7 +15,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye}`;
   };
 
-  const prettyDateTime = time => {
+  const prettyDateTime = (time) => {
     const dtf = Intl.DateTimeFormat('en-GB', {
       // weekday: 'short',
       day: 'numeric',
@@ -46,7 +46,7 @@ const NewsItem = ({ item }) => {
     return `${da} ${mo} ${ye} ${hh}:${mm} ${tz}`;
   };
 
-  const itemPath = urlString => {
+  const itemPath = (urlString) => {
     const url = new URL(urlString);
     return url.pathname.replace('/fise', '');
   };

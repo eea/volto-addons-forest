@@ -13,8 +13,8 @@ const BlockEditForm = ({
   formData,
   block,
 }) => {
-  const defaultFieldset = schema.fieldsets.find(o => o.id === 'default');
-  const other = schema.fieldsets.filter(o => o.id !== 'default');
+  const defaultFieldset = schema.fieldsets.find((o) => o.id === 'default');
+  const other = schema.fieldsets.filter((o) => o.id !== 'default');
   return (
     <Segment.Group raised>
       <header className="header pulled">
@@ -61,11 +61,11 @@ const BlockEditForm = ({
         </Segment>
       </div>
 
-      {other.map(fieldset => (
+      {other.map((fieldset) => (
         <div key={fieldset.id} id={`blockform-fieldset-${fieldset.id}`}>
           {title && <Segment className="secondary">{fieldset.title}</Segment>}
           <Segment className="form sidebar-image-data">
-            {map(fieldset.fields, field => (
+            {map(fieldset.fields, (field) => (
               <Field
                 {...schema.properties[field]}
                 id={field}

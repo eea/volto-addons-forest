@@ -68,7 +68,7 @@ const schema = {
   },
 };
 
-const Edit = props => {
+const Edit = (props) => {
   if (__SERVER__) {
     return <div />;
   }
@@ -82,7 +82,7 @@ const Edit = props => {
 
 export default compose(
   injectIntl,
-  connect(state => ({
+  connect((state) => ({
     content: state.content.data,
   })),
 )(Edit);

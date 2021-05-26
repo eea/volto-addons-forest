@@ -174,13 +174,13 @@ export function getMapData() {
 
 export function quickSearchContent(url, options, subrequest = null, filters) {
   let queryArray = [];
-  const arrayOptions = pickBy(options, item => isArray(item));
+  const arrayOptions = pickBy(options, (item) => isArray(item));
 
   queryArray = concat(
     queryArray,
     options
       ? join(
-          map(toPairs(pickBy(options, item => !isArray(item))), item => {
+          map(toPairs(pickBy(options, (item) => !isArray(item))), (item) => {
             if (item[0] === 'SearchableText') {
               // Adds the wildcard to the SearchableText param
               item[1] = `${item[1]}*`;
@@ -197,7 +197,10 @@ export function quickSearchContent(url, options, subrequest = null, filters) {
     arrayOptions
       ? join(
           map(pickBy(arrayOptions), (item, key) => {
-            return join(item.map(value => `${key}=${value}`), '&');
+            return join(
+              item.map((value) => `${key}=${value}`),
+              '&',
+            );
           }),
           '&',
         )
@@ -226,7 +229,7 @@ export function quickResetSearchContent(subrequest = null) {
 
 export function getResources(path, b_size = 5, b_start = 0, metadata = []) {
   let metadata_fields = '';
-  metadata.forEach(item => {
+  metadata.forEach((item) => {
     metadata_fields += `&metadata_fields=${item}`;
   });
   return {

@@ -20,7 +20,7 @@ class TilesListing extends Component {
         <div className="tile-listing">
           <Item.Group>
             {items.length ? (
-              items.map(item => (
+              items.map((item) => (
                 <Item key={item['@id']}>
                   <Item.Content>
                     <Item.Header as="a" href={item.url}>

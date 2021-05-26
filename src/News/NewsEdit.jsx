@@ -11,12 +11,12 @@ class NewsEdit extends Component {
     this.state = {
       show,
       url: (data && data.url) || '',
-      error: false
-    }
+      error: false,
+    };
   }
 
   render() {
-    return (<NewsView />)
+    return <NewsView />;
   }
 }
 
