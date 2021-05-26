@@ -26,21 +26,23 @@
 .news-wrapper-view span.divider {
   width: 1px;
   height: 14px;
-  background: #e7e7e7;
   margin: 0 8px;
+  background: #e7e7e7;
 }
 
 .news-wrapper-view .headline {
-  width: 100%;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
   margin: 8px 0 !important;
+  font-size: 20px;
 }
+
 .news-wrapper-view article {
   padding: 8px 0;
 }
+
 .news-wrapper-view article:not(:first-child) {
   border-top: 1px solid #e6e6e6;
 }
@@ -48,9 +50,9 @@
 .news-wrapper-view article .article-headline {
   display: flex;
   align-items: center;
+  margin: 0 !important;
   cursor: pointer;
   font-size: 18px;
-  margin: 0 !important;
   font-weight: 600;
 }
 
@@ -60,8 +62,8 @@
 
 .news-wrapper-view article .article-body {
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
   pointer-events: none;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
 }
 
 .news-wrapper-view article .article-body.expanded {
@@ -98,10 +100,10 @@
 }
 
 .news-wrapper-view .actions {
-  color: #002d54;
   position: absolute;
-  bottom: 1em;
   right: 1em;
+  bottom: 1em;
+  color: #002d54;
 }
 
 .news-wrapper-view .headline a.rss-feed {

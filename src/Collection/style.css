@@ -33,6 +33,7 @@
 .headings_navigation .ui.vertical.menu .active.item:hover {
   background-color: rgba(0, 0, 0, 0.02);
 }
+
 .headings_navigation .ui.vertical.menu .active.item {
   font-weight: bold;
 }
