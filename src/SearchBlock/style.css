@@ -12,7 +12,7 @@
   color: rgb(0, 0, 0);
   background: rgb(255, 255, 255);
 }
-  
+
 .searchbox .icon {
   fill: #606060;
   position: absolute;
@@ -21,7 +21,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
-  
+
 .searchbox .searchIcon {
   cursor: pointer;
 }
@@ -42,7 +42,6 @@
   fill: #000;
 }
 
-
 .searchbox .floating_search_results {
   position: absolute;
   z-index: 98;
@@ -57,7 +56,7 @@
   padding-left: 3rem;
   background: white;
   color: #000;
-  border: 1px solid #EDEDED;
+  border: 1px solid #ededed;
   border-radius: 5px;
   -webkit-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 2px 4px -3px rgba(0, 0, 0, 0.75);
@@ -65,9 +64,9 @@
 }
 .searchbox li {
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.9;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 .searchbox li:hover {
   font-weight: bold;

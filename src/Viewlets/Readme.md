@@ -19,3 +19,4 @@ render() {
 }
 
 Example of viewlet: ``volto-datablocks/Viewlets/ConnectedDataParameterWatcher.jsx``.
+```
