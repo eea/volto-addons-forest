@@ -48,14 +48,14 @@ export function dataToQueryString(data) {
 
 // if URL matches a defined cors proxy destination, then use the cors proxy
 export function useCorsproxy(targetUrl) {
-  console.log('using cors proxy', targetUrl);
+  // console.log('using cors proxy', targetUrl);
   const allowed_cors_destinations = settings.allowed_cors_destinations || [];
   const parsed = url.parse(targetUrl);
   const nextUrl =
     allowed_cors_destinations.indexOf(parsed.host) === -1
       ? targetUrl
       : `/cors-proxy/${targetUrl}`;
-  console.log('url is', nextUrl, parsed.host, allowed_cors_destinations);
+  // console.log('url is', nextUrl, parsed.host, allowed_cors_destinations);
   return nextUrl;
 }
 

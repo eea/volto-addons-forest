@@ -9,7 +9,6 @@ import { isArray, isObject, isString } from 'lodash';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
-import { getBaseUrl } from '@plone/volto/helpers';
 import { settings } from '~/config';
 import { quickResetSearchContent, quickSearchContent } from '../actions';
 import Highlighter from 'react-highlight-words';

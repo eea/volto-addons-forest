@@ -156,7 +156,7 @@ export function cloneAsType(path, typeName) {
 
 export function changeMapData(mapData) {
   localStorage.setItem('mapData', JSON.stringify(mapData));
-  console.log('coming her', mapData);
+  // console.log('coming her', mapData);
   return {
     type: CHANGE_MAP_DATA,
     mapData,
@@ -165,7 +165,7 @@ export function changeMapData(mapData) {
 
 export function getMapData() {
   const mapData = JSON.parse(localStorage.getItem('mapData'));
-  console.log('got new data', mapData);
+  // console.log('got new data', mapData);
   return {
     type: GET_MAP_DATA,
     mapData,

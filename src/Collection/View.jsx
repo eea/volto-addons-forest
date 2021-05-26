@@ -5,8 +5,7 @@
 
 import React from 'react';
 import { Helmet } from '@plone/volto/helpers';
-import { Link } from 'react-router-dom';
-import { Container, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import BlockView from './BlockView';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { settings } from '~/config';
@@ -22,7 +21,7 @@ const CollectionView = ({ content }) => {
     .replace(settings.internalApiPath, '')
     .replace(settings.apiPath, '');
   url = getBaseUrl(url);
-  console.log('content url', url);
+  // console.log('content url', url);
   return (
     <Container id="page-home">
       <Helmet title={content.title} />
