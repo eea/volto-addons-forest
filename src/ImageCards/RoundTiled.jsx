@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import React, { useEffect } from 'react';
 
@@ -10,7 +10,7 @@ export const getPath = (url) => new URL(url).pathname;
 // work on local;
 
 export const thumbUrl = (url) =>
-  (url || '').includes(settings.apiPath)
+  (url || '').includes(config.settings.apiPath)
     ? `${flattenToAppURL(url)}/@@images/image/preview`
     : `${url}/@@images/image/preview`;
 

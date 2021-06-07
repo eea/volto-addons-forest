@@ -18,7 +18,7 @@ import {
   GET_RESOURCES,
 } from './constants';
 import { compact, concat, isArray, join, map, pickBy, toPairs } from 'lodash';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { dataToQueryString } from './helpers';
 
 export function getIndexValues(name) {
@@ -99,7 +99,7 @@ export function deleteAttachment(path) {
     type: DELETE_ATTACHMENT,
     request: {
       op: 'del',
-      path: path.replace(settings.apiPath, ''),
+      path: path.replace(config.settings.apiPath, ''),
     },
   };
 }
@@ -109,7 +109,7 @@ export function updateAttachment(path, data) {
     type: UPDATE_ATTACHMENT,
     request: {
       op: 'patch',
-      path: path.replace(settings.apiPath, ''),
+      path: path.replace(config.settings.apiPath, ''),
       data,
     },
   };

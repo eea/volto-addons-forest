@@ -1,6 +1,6 @@
 import redraft from 'redraft';
 import { compact, concat, isArray, join, map, pickBy, toPairs } from 'lodash';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 const url = require('url');
 
 // NOTE: this needs to be improvded to recursively convert the query to qs
@@ -48,8 +48,9 @@ export function dataToQueryString(data) {
 
 // if URL matches a defined cors proxy destination, then use the cors proxy
 export function useCorsproxy(targetUrl) {
-  // console.log('using cors proxy', targetUrl);
-  const allowed_cors_destinations = settings.allowed_cors_destinations || [];
+  console.log('using cors proxy', targetUrl);
+  const allowed_cors_destinations =
+    config.settings.allowed_cors_destinations || [];
   const parsed = url.parse(targetUrl);
   const nextUrl =
     allowed_cors_destinations.indexOf(parsed.host) === -1
@@ -61,6 +62,10 @@ export function useCorsproxy(targetUrl) {
 
 export function renderDraft(draftValue) {
   return draftValue
-    ? redraft(draftValue, settings.ToHTMLRenderers, settings.ToHTMLOptions)
+    ? redraft(
+        draftValue,
+        config.settings.ToHTMLRenderers,
+        config.settings.ToHTMLOptions,
+      )
     : '';
 }

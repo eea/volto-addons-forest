@@ -5,6 +5,7 @@ import { Tab } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from '../Widgets/WidthBasedLayoutProvider';
+
 import './style.css';
 
 const panes = (context) => [

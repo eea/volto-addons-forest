@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPortlets } from '../actions';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { normalize } from './utils';
 import { getBaseUrl } from '@plone/volto/helpers';
 
 export function renderPortlet(portlet, props) {
-  const portlets = settings.portlets;
+  const portlets = config.settings.portlets;
   const PortletRenderer =
     portlets.renderers[portlet['@type']] || portlets.renderers.default;
   return <PortletRenderer portlet={portlet} {...props} />;

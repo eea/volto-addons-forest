@@ -3,13 +3,13 @@ import { FormattedDate } from 'react-intl';
 import { Item } from 'semantic-ui-react';
 import { Breadcrumb, Placeholder } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 class TilesListing extends Component {
   getPath(url) {
     return url
-      .replace(settings.apiPath, '')
-      .replace(settings.internalApiPath, '');
+      .replace(config.settings.apiPath, '')
+      .replace(config.settings.internalApiPath, '');
   }
 
   render() {

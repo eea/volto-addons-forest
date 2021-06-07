@@ -8,7 +8,7 @@ import { Helmet } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
 import BlockView from './BlockView';
 import { getBaseUrl } from '@plone/volto/helpers';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 
 /**
  * List view component class.
@@ -18,8 +18,8 @@ import { settings } from '~/config';
  */
 const CollectionView = ({ content }) => {
   let url = content['@id']
-    .replace(settings.internalApiPath, '')
-    .replace(settings.apiPath, '');
+    .replace(config.settings.internalApiPath, '')
+    .replace(config.settings.apiPath, '');
   url = getBaseUrl(url);
   // console.log('content url', url);
   return (
