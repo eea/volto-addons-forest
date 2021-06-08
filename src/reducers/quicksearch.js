@@ -3,7 +3,7 @@
  * @module reducers/search/search
  */
 
-import { map, omit } from 'lodash';
+import { omit } from 'lodash';
 import config from '@plone/volto/registry';
 
 import { QUICK_RESET_SEARCH_CONTENT, QUICK_SEARCH_CONTENT } from '../constants';
