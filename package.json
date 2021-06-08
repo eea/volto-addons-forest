@@ -35,8 +35,7 @@
     "redraft": "^0.10.2"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.5",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "@cypress/code-coverage": "^3.9.5"
   },
   "scripts": {
     "release": "release-it",
