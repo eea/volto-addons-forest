@@ -3,7 +3,6 @@
  * @module reducers/search/search
  */
 
-import { omit } from 'lodash';
 import { map, omit } from 'lodash';
 import config from '@plone/volto/registry';
 
