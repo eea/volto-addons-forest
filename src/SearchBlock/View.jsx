@@ -9,8 +9,7 @@ import { isArray, isObject, isString } from 'lodash';
 import { Icon } from '@plone/volto/components';
 import zoomSVG from '@plone/volto/icons/zoom.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
-import { getBaseUrl } from '@plone/volto/helpers';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { quickResetSearchContent, quickSearchContent } from '../actions';
 import Highlighter from 'react-highlight-words';
 import './style.css';
@@ -36,7 +35,7 @@ class View extends Component {
     super(props);
     this.state = {
       text: '',
-      apiRoot: new URL(settings.apiPath).pathname,
+      apiRoot: new URL(config.settings.apiPath).pathname,
       active: false,
       query: {},
     };
@@ -168,7 +167,7 @@ class View extends Component {
       isObject(this.state.query.properties) &&
       Object.entries(this.state.query.properties).forEach(([itemKey, item]) => {
         if (isArray(item.value)) {
-          item.value.forEach(value => {
+          item.value.forEach((value) => {
             query += `&${itemKey}:query=${value}`;
           });
         } else if (item.value) {

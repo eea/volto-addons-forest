@@ -31,7 +31,8 @@ const connectedWidthProvider = compose(
               ? mosaic_breakpoints[screentype] - margins
               : mosaic_breakpoints[screentype];
 
-          console.debug(
+          /*
+	  console.debug(
             'breakpoints',
             width,
             '====>',
@@ -47,7 +48,7 @@ const connectedWidthProvider = compose(
             mosaic_width,
             'margins =>',
             margins,
-          );
+          );*/
 
           if (__SERVER__) {
             return 'widescreen';

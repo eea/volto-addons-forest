@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Portal } from 'react-portal';
 import { Segment, Button } from 'semantic-ui-react';
 import {

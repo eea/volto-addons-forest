@@ -26,11 +26,11 @@ class Filter extends Component {
     if (!results) return [];
 
     const res = {};
-    filters.forEach(f => {
+    filters.forEach((f) => {
       res[f] = 0;
     });
-    results.forEach(item => {
-      filters.forEach(f => {
+    results.forEach((item) => {
+      filters.forEach((f) => {
         if (
           item[facetFilter.token] &&
           item[facetFilter.token].indexOf(f) > -1
@@ -58,7 +58,7 @@ class Filter extends Component {
             <b>Filter by {this.props.facetFilter.title}</b>
           </h5>
           <Menu vertical>
-            {this.props.filters.map(item => (
+            {this.props.filters.map((item) => (
               <Menu.Item
                 key={item}
                 name={item}

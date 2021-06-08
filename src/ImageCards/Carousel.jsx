@@ -10,7 +10,7 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 
 class Carousel extends Component {
   componentDidMount() {
-    import('./css/carousel.less');
+    require('./css/carousel.less');
   }
 
   renderSlide = (card) => {

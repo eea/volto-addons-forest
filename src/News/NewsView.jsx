@@ -5,7 +5,7 @@ import { Tab } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import NewsItem from './NewsItem';
 import WidthBasedLayoutProvider from '../Widgets/WidthBasedLayoutProvider';
-import { settings } from '~/config';
+
 import './style.css';
 
 const panes = (context) => [
@@ -74,7 +74,7 @@ const RenderItems = ({ items, type }) => {
           </Link>
         </div>
       )}
-      {(!items || items.length == 0) && (
+      {(!items || items.length === 0) && (
         <div className="message">
           <span>There are no {type} at the moment.</span>
         </div>

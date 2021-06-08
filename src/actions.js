@@ -18,7 +18,7 @@ import {
   GET_RESOURCES,
 } from './constants';
 import { compact, concat, isArray, join, map, pickBy, toPairs } from 'lodash';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { dataToQueryString } from './helpers';
 
 export function getIndexValues(name) {
@@ -99,7 +99,7 @@ export function deleteAttachment(path) {
     type: DELETE_ATTACHMENT,
     request: {
       op: 'del',
-      path: path.replace(settings.apiPath, ''),
+      path: path.replace(config.settings.apiPath, ''),
     },
   };
 }
@@ -109,7 +109,7 @@ export function updateAttachment(path, data) {
     type: UPDATE_ATTACHMENT,
     request: {
       op: 'patch',
-      path: path.replace(settings.apiPath, ''),
+      path: path.replace(config.settings.apiPath, ''),
       data,
     },
   };
@@ -156,7 +156,7 @@ export function cloneAsType(path, typeName) {
 
 export function changeMapData(mapData) {
   localStorage.setItem('mapData', JSON.stringify(mapData));
-  console.log('coming her', mapData);
+  // console.log('coming her', mapData);
   return {
     type: CHANGE_MAP_DATA,
     mapData,
@@ -165,7 +165,7 @@ export function changeMapData(mapData) {
 
 export function getMapData() {
   const mapData = JSON.parse(localStorage.getItem('mapData'));
-  console.log('got new data', mapData);
+  // console.log('got new data', mapData);
   return {
     type: GET_MAP_DATA,
     mapData,
@@ -174,13 +174,13 @@ export function getMapData() {
 
 export function quickSearchContent(url, options, subrequest = null, filters) {
   let queryArray = [];
-  const arrayOptions = pickBy(options, item => isArray(item));
+  const arrayOptions = pickBy(options, (item) => isArray(item));
 
   queryArray = concat(
     queryArray,
     options
       ? join(
-          map(toPairs(pickBy(options, item => !isArray(item))), item => {
+          map(toPairs(pickBy(options, (item) => !isArray(item))), (item) => {
             if (item[0] === 'SearchableText') {
               // Adds the wildcard to the SearchableText param
               item[1] = `${item[1]}*`;
@@ -197,7 +197,10 @@ export function quickSearchContent(url, options, subrequest = null, filters) {
     arrayOptions
       ? join(
           map(pickBy(arrayOptions), (item, key) => {
-            return join(item.map(value => `${key}=${value}`), '&');
+            return join(
+              item.map((value) => `${key}=${value}`),
+              '&',
+            );
           }),
           '&',
         )
@@ -226,7 +229,7 @@ export function quickResetSearchContent(subrequest = null) {
 
 export function getResources(path, b_size = 5, b_start = 0, metadata = []) {
   let metadata_fields = '';
-  metadata.forEach(item => {
+  metadata.forEach((item) => {
     metadata_fields += `&metadata_fields=${item}`;
   });
   return {

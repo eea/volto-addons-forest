@@ -15,7 +15,7 @@ import {
   deleteAttachment,
 } from '../actions';
 import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
-import { settings } from '~/config';
+import config from '@plone/volto/registry';
 import { withRouter } from 'react-router-dom';
 
 import clearIcon from '@plone/volto/icons/clear.svg';
@@ -60,8 +60,8 @@ class SlideEditor extends Component {
     const text = ReactDOMServer.renderToStaticMarkup(
       redraft(
         this.state.editorState.text,
-        settings.ToHTMLRenderers,
-        settings.ToHTMLOptions,
+        config.settings.ToHTMLRenderers,
+        config.settings.ToHTMLOptions,
       ),
     );
     this.setState({ editing: false }, () => {
@@ -77,7 +77,7 @@ class SlideEditor extends Component {
   render() {
     const slide = this.props.slide;
     let editorState = stateFromHTML(slide.text.data || '', {
-      customBlockFn: settings.FromHTMLCustomBlockFn,
+      customBlockFn: config.settings.FromHTMLCustomBlockFn,
     });
     let text = convertToRaw(editorState);
     const textdata = { text };
