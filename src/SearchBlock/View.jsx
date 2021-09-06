@@ -152,15 +152,16 @@ class View extends Component {
     this.setState({ text: value });
   }
 
-  onSelectItem(item) {
-    item?.['@id'] && this.props.history.push(item['@id']);
-  }
-
   onClose() {
     this.props.quickResetSearchContent();
     this.setState({ active: false });
   }
 
+  onSelectItem(item) {
+    item?.['@id'] && this.props.history.push(item['@id']);
+    this.props.handleClose();
+    this.setState({ active: false });
+  }
   makeQuery() {
     let query = '';
     this.state.query.properties &&
