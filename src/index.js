@@ -1,5 +1,4 @@
 import chartIcon from '@plone/volto/icons/world.svg';
-import codeSVG from '@plone/volto/icons/code.svg';
 
 import HiddenWidget from './Widgets/Hidden';
 import CollectionYears from './Widgets/CollectionYears';
