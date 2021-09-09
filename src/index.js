@@ -1,5 +1,4 @@
 import chartIcon from '@plone/volto/icons/world.svg';
-import codeSVG from '@plone/volto/icons/code.svg';
 
 import HiddenWidget from './Widgets/Hidden';
 import CollectionYears from './Widgets/CollectionYears';
@@ -15,8 +14,8 @@ import CollectionBlockView from './Collection/BlockView';
 import CollectionBlockEdit from './Collection/BlockEdit';
 import CollectionView from './Collection/View';
 
-import ImageCardsView from './ImageCards/ImageCardsView';
-import ImageCardsEdit from './ImageCards/ImageCardsEdit';
+//import ImageCardsView from './ImageCards/ImageCardsView';
+//import ImageCardsEdit from './ImageCards/ImageCardsEdit';
 
 import * as addonReducers from './reducers';
 
@@ -86,21 +85,21 @@ export default (config) => {
     group: 'custom_addons',
   };
 
-  config.blocks.blocksConfig.imagecards = {
-    id: 'imagecards',
-    title: 'Image Cards',
-    icon: codeSVG,
-    group: 'bise',
-    view: ImageCardsView,
-    edit: ImageCardsEdit,
-    restricted: false,
-    mostUsed: false,
-    sidebarTab: 1,
-    security: {
-      addPermission: [],
-      view: [],
-    },
-  };
+  // config.blocks.blocksConfig.imagecards = {
+  //   id: 'imagecards',
+  //   title: 'Image Cards',
+  //   icon: codeSVG,
+  //   group: 'bise',
+  //   view: ImageCardsView,
+  //   edit: ImageCardsEdit,
+  //   restricted: false,
+  //   mostUsed: false,
+  //   sidebarTab: 1,
+  //   security: {
+  //     addPermission: [],
+  //     view: [],
+  //   },
+  // };
 
   // config.viewlets = [
   //   {

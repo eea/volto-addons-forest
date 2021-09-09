@@ -4,7 +4,7 @@
  */
 
 import { omit } from 'lodash';
-import config from '@plone/volto/registry';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 import { QUICK_RESET_SEARCH_CONTENT, QUICK_SEARCH_CONTENT } from '../constants';
 
@@ -53,7 +53,7 @@ export default function search(state = initialState, action = {}) {
           };
     case `${QUICK_SEARCH_CONTENT}_SUCCESS`:
       const items = action.result.items.filter((item) => {
-        item['@id'] = item['@id'].replace(config.settings.apiPath, '');
+        item['@id'] = flattenToAppURL(item['@id']);
         let ok = true;
         action.filters &&
           Object.entries(action.filters).forEach(([filterKey, filter]) => {

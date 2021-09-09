@@ -3,15 +3,9 @@ import { FormattedDate } from 'react-intl';
 import { Item } from 'semantic-ui-react';
 import { Breadcrumb, Placeholder } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import config from '@plone/volto/registry';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 class TilesListing extends Component {
-  getPath(url) {
-    return url
-      .replace(config.settings.apiPath, '')
-      .replace(config.settings.internalApiPath, '');
-  }
-
   render() {
     const { items } = this.props;
 
@@ -35,7 +29,7 @@ class TilesListing extends Component {
                               <Breadcrumb.Section>
                                 <Link
                                   key={item.url}
-                                  to={this.getPath(item['@id'])}
+                                  to={flattenToAppURL(item['@id'])}
                                 >
                                   {item.title}
                                 </Link>
@@ -47,7 +41,7 @@ class TilesListing extends Component {
                               <Breadcrumb.Section>
                                 <Link
                                   key={item.url}
-                                  to={this.getPath(item['@id'])}
+                                  to={flattenToAppURL(item['@id'])}
                                 >
                                   {item.title}
                                 </Link>
