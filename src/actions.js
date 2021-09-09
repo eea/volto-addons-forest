@@ -1,3 +1,4 @@
+import { flattenToAppURL } from '@plone/volto/helpers';
 import { GET_CONTENT } from '@plone/volto/constants/ActionTypes';
 import {
   GET_INDEX_VALUES,
@@ -18,7 +19,6 @@ import {
   GET_RESOURCES,
 } from './constants';
 import { compact, concat, isArray, join, map, pickBy, toPairs } from 'lodash';
-import config from '@plone/volto/registry';
 import { dataToQueryString } from './helpers';
 
 export function getIndexValues(name) {
@@ -99,7 +99,7 @@ export function deleteAttachment(path) {
     type: DELETE_ATTACHMENT,
     request: {
       op: 'del',
-      path: path.replace(config.settings.apiPath, ''),
+      path: flattenToAppURL(path),
     },
   };
 }
@@ -109,7 +109,7 @@ export function updateAttachment(path, data) {
     type: UPDATE_ATTACHMENT,
     request: {
       op: 'patch',
-      path: path.replace(config.settings.apiPath, ''),
+      path: flattenToAppURL(path),
       data,
     },
   };

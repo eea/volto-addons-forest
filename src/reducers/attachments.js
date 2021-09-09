@@ -1,5 +1,5 @@
 import { GET_ALL_ATTACHMENTS, CREATE_ATTACHMENT } from '../constants';
-import config from '@plone/volto/registry';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const initialState = {
   error: null,
@@ -31,7 +31,7 @@ export default function attachments(state = initialState, action = {}) {
         error: null,
         attachments: action.result.items.map((item) => ({
           ...item,
-          url: item['@id'].replace(config.settings.apiPath, ''),
+          url: flattenToAppURL(item['@id']),
         })),
         loaded: true,
         loading: false,
