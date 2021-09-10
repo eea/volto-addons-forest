@@ -45,6 +45,9 @@ export default (config) => {
     ...config.addonReducers,
     ...addonReducers,
   };
+
+  config.settings.virtualHostedPaths = ['**/RSS'];
+
   config.settings.portlets = {
     managers: {
       ...config.portlets?.managers,
