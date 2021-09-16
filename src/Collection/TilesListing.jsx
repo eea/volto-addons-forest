@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { FormattedDate } from 'react-intl';
 import { Item } from 'semantic-ui-react';
-import { Breadcrumb, Placeholder } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { Placeholder } from 'semantic-ui-react';
+// import { Breadcrumb } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
+// import { flattenToAppURL } from '@plone/volto/helpers';
 
 class TilesListing extends Component {
   render() {

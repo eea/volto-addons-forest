@@ -20,13 +20,13 @@ import './style.less';
  */
 const CollectionView = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(25);
+  const [itemsPerPage] = useState(25);
   const dispatch = useDispatch();
   const { content, location } = props;
   const items = content.items;
   const totalItems = content.items_total;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const pageSizes = [25, 50, 100];
+  // const pageSizes = [25, 50, 100];
 
   useEffect(() => {
     dispatch(
