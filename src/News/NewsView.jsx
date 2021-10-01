@@ -34,11 +34,10 @@ const panes = (context) => [
         </p>
         <p>
           You can find more information about RSS and you can check our feed{' '}
-          <Link to="rss-feed" className="ui primary button" target="_blank">
-            {' '}
-            Here
-          </Link>
         </p>
+        <Link to="rss-feed" className="ui primary button" target="_blank">
+          Here
+        </Link>
       </Tab.Pane>
     ),
   },
@@ -111,7 +110,7 @@ const NewsView = (props) => {
 
   return (
     <div
-      className={`news-wrapper-view ${props.layout_type}-${
+      className={`news-wrapper-view portlet ${props.layout_type}-${
         grid[props.layout_type]
       }`}
     >

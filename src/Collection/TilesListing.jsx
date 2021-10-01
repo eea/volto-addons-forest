@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { FormattedDate } from 'react-intl';
 import { Item } from 'semantic-ui-react';
-import { Breadcrumb, Placeholder } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import { flattenToAppURL } from '@plone/volto/helpers';
+import { Placeholder } from 'semantic-ui-react';
+// import { Breadcrumb } from 'semantic-ui-react';
+// import { Link } from 'react-router-dom';
+// import { flattenToAppURL } from '@plone/volto/helpers';
 
 class TilesListing extends Component {
   render() {
@@ -20,7 +21,7 @@ class TilesListing extends Component {
                     <Item.Header as="a" href={item.url}>
                       <h3 className="tile-title">{item.Title || item.title}</h3>
                     </Item.Header>
-                    {item['@components'] && item['@components'].breadcrumbs && (
+                    {/* {item['@components'] && item['@components'].breadcrumbs && (
                       <Breadcrumb>
                         {item['@components'].breadcrumbs.items
                           .slice(0, -1)
@@ -49,7 +50,7 @@ class TilesListing extends Component {
                             ),
                           ])}
                       </Breadcrumb>
-                    )}
+                    )} */}
                     <Item.Description>{item.description}</Item.Description>
                     <Item.Extra>
                       <span className="muted">Updated:</span>
