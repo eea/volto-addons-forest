@@ -26,6 +26,8 @@ import {
   ClassicPortlet,
 } from './Portlets';
 
+import '@plone/volto/config';
+
 function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter((el) => {
     return el.id === 'custom_addons';
@@ -38,7 +40,7 @@ function addCustomGroup(config) {
   }
 }
 
-export default (config) => {
+export default function applyConfig(config) {
   addCustomGroup(config);
 
   config.addonReducers = {
