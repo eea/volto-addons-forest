@@ -3,7 +3,7 @@ import chartIcon from '@plone/volto/icons/world.svg';
 import HiddenWidget from './Widgets/Hidden';
 import CollectionYears from './Widgets/CollectionYears';
 // import PickObject from './PickObject';
-import ObjectListWidget from './Widgets/ObjectList';
+
 import AlignBlockWidget from './Widgets/Align';
 import AttachedImageWidget from './Widgets/AttachedImage';
 
@@ -25,8 +25,6 @@ import {
   PortletManagerRenderer,
   ClassicPortlet,
 } from './Portlets';
-
-import '@plone/volto/config';
 
 function addCustomGroup(config) {
   const hasCustomGroup = config.blocks.groupBlocksOrder.filter((el) => {
@@ -68,7 +66,6 @@ export default function applyConfig(config) {
   config.widgets.id.blocks_layout = HiddenWidget;
 
   // config.widgets.widget.object_by_path = PickObject;
-  config.widgets.widget.objectlist = ObjectListWidget;
   config.widgets.widget.align = AlignBlockWidget;
   config.widgets.widget.attachedimage = AttachedImageWidget;
 
