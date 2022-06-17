@@ -19,7 +19,6 @@ import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
 
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { createContent } from '@plone/volto/actions';
-import { v4 as uuid } from 'uuid';
 
 import config from '@plone/volto/registry';
 
@@ -67,7 +66,6 @@ export class UnconnectedAttachedImageWidget extends Component {
     super(props);
     this.state = {
       uploading: false,
-      uid: uuid(),
     };
 
     this.onDrop = this.onDrop.bind(this);
