@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-addons-forest",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Addons and functionalities used by Forest",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
