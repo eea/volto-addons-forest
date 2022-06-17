@@ -19,6 +19,7 @@ import { flattenToAppURL, getBaseUrl } from '@plone/volto/helpers';
 
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { createContent } from '@plone/volto/actions';
+import { v4 as uuid } from 'uuid';
 
 import config from '@plone/volto/registry';
 
@@ -66,6 +67,7 @@ export class UnconnectedAttachedImageWidget extends Component {
     super(props);
     this.state = {
       uploading: false,
+      uid: uuid(),
     };
 
     this.onDrop = this.onDrop.bind(this);
@@ -98,7 +100,6 @@ export class UnconnectedAttachedImageWidget extends Component {
     acceptedFiles.forEach((file) => {
       readAsDataURL(file).then((data) => {
         const fields = data.match(/^data:(.*);(.*),(.*)$/);
-        // console.log('fields', fields);
 
         this.props.createContent(getBaseUrl(this.props.pathname), {
           '@type': 'Image',
@@ -205,25 +206,33 @@ export class UnconnectedAttachedImageWidget extends Component {
 
               {value ? (
                 <Item>
-                  <Item.Image src={flattenToAppURL(thumbUrl(value) || '')} />
+                  <Item.Image
+                    src={this.props.content?.image?.scales?.thumb?.download}
+                  />
                 </Item>
               ) : (
-                <div>
-                  <Dropzone onDrop={this.onDrop} className="dropzone">
-                    <Message>
-                      {this.state.uploading && (
-                        <Dimmer active>
-                          <Loader indeterminate>Uploading</Loader>
-                        </Dimmer>
-                      )}
-
-                      <center>
-                        <img src={imageBlockSVG} alt="" />
-                        <div className="discreet">Click or drag file here</div>
-                      </center>
-                    </Message>
-                  </Dropzone>
-                </div>
+                <Dropzone onDrop={this.onDrop} className="dropzone">
+                  {({ getRootProps, getInputProps }) => {
+                    return (
+                      <Message {...getRootProps()}>
+                        {this.state.uploading && (
+                          <Dimmer active>
+                            <Loader indeterminate>Uploading</Loader>
+                          </Dimmer>
+                        )}
+                        <center>
+                          <Item>
+                            <input {...getInputProps()} />
+                            <div className="discreet">
+                              Click or drag image to upload
+                            </div>
+                            <img src={imageBlockSVG} alt="" />
+                          </Item>
+                        </center>
+                      </Message>
+                    );
+                  }}
+                </Dropzone>
               )}
 
               {map(error, (message) => (
