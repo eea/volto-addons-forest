@@ -5,7 +5,6 @@ import CollectionYears from './Widgets/CollectionYears';
 // import PickObject from './PickObject';
 
 import AlignBlockWidget from './Widgets/Align';
-import AttachedImageWidget from './Widgets/AttachedImage';
 
 import NewsView from './News/NewsView';
 import NewsEdit from './News/NewsEdit';
@@ -67,7 +66,6 @@ export default function applyConfig(config) {
 
   // config.widgets.widget.object_by_path = PickObject;
   config.widgets.widget.align = AlignBlockWidget;
-  config.widgets.widget.attachedimage = AttachedImageWidget;
 
   config.blocks.blocksConfig.collection_block = {
     id: 'collection_block',
