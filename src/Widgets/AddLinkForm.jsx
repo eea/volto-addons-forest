@@ -12,7 +12,7 @@ import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { defineMessages, injectIntl } from 'react-intl';
 
 import { resetSearchContent, searchContent } from '@plone/volto/actions';
-import URLUtils from '@plone/volto/components/manage/AnchorPlugin/utils/URLUtils';
+import URLUtils from '@plone/volto/helpers/Url/Url';
 
 const messages = defineMessages({
   placeholder: {
