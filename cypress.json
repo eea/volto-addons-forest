@@ -8,5 +8,9 @@
     "mochaFile": "cypress/reports/cypress-[hash].xml",
     "jenkinsMode": true,
     "toConsole": true
+  },
+  "retries": {
+    "runMode": 8,
+    "OpenMode": 0
   }
 }
