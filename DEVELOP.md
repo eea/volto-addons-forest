@@ -24,10 +24,6 @@
 
 1.  Happy hacking!
 
-    ```Bash
-    cd src/addons/volto-addons-forest/
-    ```
-
 ### Or add @eeacms/volto-addons-forest to your Volto project
 
 Before starting make sure your development environment is properly set. See [Volto Developer Documentation](https://docs.voltocms.com/getting-started/install/)
@@ -64,8 +60,6 @@ Before starting make sure your development environment is properly set. See [Vol
         docker run --pull always -it --rm --name plone -p 8080:8080 -e SITE=Plone plone/plone-backend
 
     ...wait for backend to setup and start - `Ready to handle requests`:
-
-        $ docker logs -f plone
 
     ...you can also check http://localhost:8080/Plone
 
