@@ -37,6 +37,6 @@ module.exports = {
     },
   },
   setupFilesAfterEnv: [
-    '<rootDir>/node_modules/@eeacms/volto-addon-template/jest.setup.js',
+    '<rootDir>/node_modules/@eeacms/volto-addons-forest/jest.setup.js',
   ],
 };
