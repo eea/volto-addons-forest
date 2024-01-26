@@ -1,9 +1,9 @@
 import React from 'react';
 import { Field } from '@plone/volto/components';
 
-// TODO: handle more then the default schema?
+// TODO: handle more than the default schema?
 
-const Object = ({ schema, value, onChange, errors = {} }) => {
+const ObjectWidget = ({ schema, value, onChange, errors = {} }) => {
   return (
     <>
       {schema.fieldsets[0].fields.map((field, index) => {
@@ -25,4 +25,4 @@ const Object = ({ schema, value, onChange, errors = {} }) => {
   );
 };
 
-export default Object;
+export default ObjectWidget;
