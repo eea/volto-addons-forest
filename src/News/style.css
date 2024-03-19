@@ -63,13 +63,17 @@
 .news-wrapper-view article .article-body {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    max-height 0.3s ease-in-out;
 }
 
 .news-wrapper-view article .article-body.expanded {
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+  transition:
+    opacity 0.3s ease-in-out,
+    max-height 0.3s ease-in-out;
 }
 
 .news-wrapper-view article .article-body .meta-data {
